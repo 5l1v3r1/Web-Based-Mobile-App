@@ -1,0 +1,21 @@
+.big-box {
+	display: none;
+}
+
+.box {
+	width: 75px;
+	height: 75px;
+	margin: 5px;
+	background-color: white;
+	text-align: center;
+	display: inline-block;
+}
+
+.flex-container {
+	display: flex;
+	background-color: darkblue;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

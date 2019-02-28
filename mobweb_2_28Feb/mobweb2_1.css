@@ -1,0 +1,28 @@
+p {
+	background-color: blue;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.box {
+	width: 70px;
+	height: 70px;
+	margin: 5px;
+	background-color: green;
+	color: black;
+	text-align: center;
+	display: inline-block;
+}
+
+.flex-container {
+	display: flex;
+	background-color: blue;
+	flex-wrap: wrap; /* Other options: wrap , wrap-reverse */
+
+	/* column, turun kebawah */
+	/* flex-direction: column; */
+
+	justify-content: center;			
+}
