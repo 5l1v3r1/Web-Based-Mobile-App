@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Responsive Images</title>
+		<style>
+			.resp {
+				/*height: 100vh;*/
+				width: 100vmin;
+				height: 100vmin;
+			}
+			[data-icon]:before {
+			  font-family: icons; /* BYO icon font, mapped smartly */
+			  content: attr(data-icon);
+			  speak: none; /* Not to be trusted, but hey. */
+			}
+			@media screen and (max-width: 700px) {
+				.respo {
+					width: 100vw;
+				}
+			}
+			@media screen and (min-width: 700px) {
+				.respo {
+					width: 50vw;
+				}
+			}
+			.imagespot {
+				width: 640px;
+				height: 240px; /* exact dimension of image */
+				background: #ffffff url(images/500.jpg) top left no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<img class="resp" src="daihatsu.jpg">
+
+		<!-- unicode, icon fonts -->
+		<h3>
+			<span aria-hidden="true" data-icon="&#x21dd;"></span>
+			Stats
+		</h3>
+		<!-- &#77;  &#68; &#69;  https://unicode-table.com/en/#control-character -->
+		<!-- https://css-tricks.com/examples/IconFont/ -->
+
+		<!-- srcset -->
+		<img class='respo' srcset="images/1600.jpg 1600w, 
+					 images/1000.jpg 1000w,
+					 images/800.jpg 800w, 
+					 images/500.jpg 500w">
+		<!-- <img srcset="images/1600.jpg 1600w, 
+					 images/1000.jpg 1000w,
+					 images/800.jpg 800w, 
+					 images/500.jpg 500w" sizes="100vw"> -->
+		<picture>
+			<source media="(min-width: 1000px)" srcset="images/1000.jpg 1x, images/1600.jpg 2x">
+			<source media="(min-width: 500px)" srcset="images/800.jpg 1x, images/500.jpg 2x">
+			<img src="daihatsu.jpg" alt="A Small Picture">
+		</picture>
+		<!-- text dalam image -->
+		<div class="imagespot">
+			text here
+		</div>
+
+		<!-- FIGCAPTION -->
+		<figure>
+			<!-- text selalu berada dibawah gambar, seperti penjelasan untuk gambar. -->
+			<img src="daihatsu.jpg" class="gambar">
+			<figcaption>I'm skiing</figcaption>
+		</figure>
+
+		<!-- SVG -->
+		<svg width="100" height="100">
+			<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow">
+		</svg>
+
+		<!-- Responsive Typography -->
+		
+	</body>
+</html>
