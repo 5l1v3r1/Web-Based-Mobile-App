@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>touch events</title>
+	<style>
+		p {
+			width: 300px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1>Touch Events</h1>
+	<p>This is a paragraph</p>
+
+	<!-- CANVAS -->
+	<canvas id="canvas" width="600" height="600" style="border:solid black 1px;">
+	Your browser does not support canvas element. </canvas>
+	<br>
+	<button onclick="startup()">Initialize</button><br>
+	Log: <pre id="log" style="border: 1px solid #ccc;"></pre>
+
+	<script>
+		document.querySelector('p').addEventListener('touchstart', f);
+		document.querySelector('p').addEventListener('touchend',f);
+		document.querySelector('p').addEventListener('touchmove',f);
+		document.querySelector('p').addEventListener('click',f);
+		function f(ev) {
+			console.log( ev.touches, ev.type );
+		}
+
+		// CANVAS
+		function startup() { 
+			var el = document.getElementsByTagName("canvas")[0];
+			el.addEventListener("touchstart", handleStart, false);
+			el.addEventListener("touchend", handleEnd, false);
+			// el.addEventListener("touchcancel", handleCancel, false);
+			el.addEventListener("touchmove", handleMove, false);
+			console.log("initialized.");
+		}
+		function handleStart() {
+			console.log("touchstart dimulai");
+		}
+		function handleEnd() {
+			console.log("touchend dimulai");
+		}
+		function handleMove() {
+			console.log("touchmove dimulai");
+		}
+	</script>
+</body>
+</html>

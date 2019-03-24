@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>request test</title>
+</head>
+<body>
+	<img id='foto'>
+	<h1>Authors</h1>
+
+<ul id="authors"></ul>
+
+<script>
+
+	// buat tag baru dari script. 	
+	function createNode(element) {
+		return document.createElement(element);
+	}
+	// tambahkan node dalam node.
+	function append(parent, el) {
+		return parent.appendChild(el);
+	}
+
+	const ul = document.getElementById('authors');
+
+	const url = 'https://randomuser.me/api/?results=5';
+
+	fetch(url).then((resp) => resp.json())
+		.then(function(data) {
+
+			let authors = data.results;
+			return authors.map(function(author) {
+				let li = createNode('li'),
+				img = createNode('img'),
+				span = createNode('span');
+				img.src = author.picture.large;
+				span.innerHTML = `${author.name.first} ${author.name.last}`;
+				append(li, img);
+				append(li, span);
+				append(ul, li);
+			})
+		})
+	.catch(function(error) {
+		console.log(error);
+	});
+
+	fetch('https://randomuser.me/api', {
+		method: 'get'
+	}).then(function(response) {
+		document['#foto'].src = response.picture['large'];
+	}).catch(function(err) {
+
+	});
+	// mode cors untuk bsa nembus web orang
+</script>
+</body>
+</html>
