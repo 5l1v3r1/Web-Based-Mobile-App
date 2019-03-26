@@ -7,7 +7,7 @@
 	<img id='foto'>
 	<h1>Authors</h1>
 
-<ul id="authors"></ul>
+	<ul id="authors"></ul>
 
 <script>
 
@@ -43,13 +43,13 @@
 		console.log(error);
 	});
 
-	fetch('https://randomuser.me/api', {
-		method: 'get'
-	}).then(function(response) {
-		document['#foto'].src = response.picture['large'];
-	}).catch(function(err) {
+	// fetch('https://randomuser.me/api', {
+	// 	method: 'get'
+	// }).then(function(response) {
+	// 	document['#foto'].src = response.picture['large'];
+	// }).catch(function(err) {
 
-	});
+	// });
 	// mode cors untuk bsa nembus web orang
 </script>
 </body>
