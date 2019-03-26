@@ -1,0 +1,14 @@
+.custom-text {
+	color: red;
+	font-size: 48px;
+}
+
+.box {
+	width: 70px;
+	height: 70px;
+	background-color: red;
+	margin: 5px;
+	color: black;
+	text-align: center;
+	display: inline-block;
+}

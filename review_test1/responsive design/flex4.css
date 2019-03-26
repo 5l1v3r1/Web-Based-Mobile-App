@@ -1,0 +1,14 @@
+.custom-text {
+	color: yellow;
+	font-size: 6px;
+}
+
+.box {
+	width: 70px;
+	height: 70px;
+	background-color: yellow;
+	margin: 5px;
+	color: black;
+	text-align: center;
+	display: inline-block;
+}

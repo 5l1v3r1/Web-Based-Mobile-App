@@ -1,0 +1,9 @@
+.custom-size {
+	width: 100vw;
+}
+
+.imagespot {
+	width: 640;
+	height: 240px;
+	background: #ffffff url(images/500.jpg) top left no-repeat;
+}
