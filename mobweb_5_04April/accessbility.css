@@ -1,0 +1,17 @@
+input:focus {
+	outline: 3px solid orange;
+}
+/*
+Warning: Never set outline to 0 or none without providing a focus alternative!
+
+:hover, :focus {
+	background: #c0ffee;
+}*/
+
+.input-text2:focus {
+	outline: 3px solid green;
+}
+
+.input-text2:hover {
+	background: yellow;
+}

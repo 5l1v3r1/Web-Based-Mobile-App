@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accessibility</title>
+	<link rel="stylesheet" type="text/css" href="accessbility.css">
+</head>
+<body>
+	<form action="/action_page.php">
+		<!-- First name: <input type="text" name="fname" autofocus> -->
+		First name: <input type="text" name="fname">
+		<br>
+		Last name: <input type="text" name="lname" id='myTextInput'><br>
+		<input type="submit">
+	</form>
+
+	<!-- Tabindex -->
+	<a href="https://www.w3schools.com/" tabindex="2">W3Schools</a><br>
+	<a href="http://www.google.com/" tabindex="1">Google</a><br>
+	<a href="http://www.microsoft.com/" tabindex="3">Microsoft</a>
+
+	<!-- Semantics -->
+	<!-- Affordances -->
+
+	<!-- 1. Add a button that when you click it will focus another element in the page. -->
+	<h2>Add a button that when you click it will focus another element in the page.</h2>
+	<input id='another_element' type="text" value='another_element'>
+	<button id='button1' onclick="handle_button1()">focus to another element</button>
+
+	<!-- 2. Provide several input groups with specific tab index orders.-->
+	<h2>Provide several input groups with specific tab index orders.</h2>
+	<a href="https://www.w3schools.com/" tabindex="4">W3Schools</a><br>
+	<a href="http://www.google.com/" tabindex="5">Google</a><br>
+	<a href="http://www.microsoft.com/" tabindex="6">Microsoft</a>
+
+	<!-- 3. Provide a high contrast menu option in a single page. -->
+	<h2>Provide a high contrast menu option in a single page.</h2>
+	<button id='contrast_button' onclick="handle_contrast()">dark mode</button>
+	<br>
+	<input type="text" name="text2" class='input-text2'>
+	<input type="text" name="text2" class='input-text2'>
+	<input type="text" name="text2" class='input-text2'>
+	<input type="text" name="text2" class='input-text2'>
+
+	<!-- 4. Add image button that can be tab and clicked and show alert. -->
+	<h2>Add image button that can be tab and clicked and show alert.</h2>
+	<img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="handle_click_img()">
+
+	<script type="text/javascript" src="methods.js"></script>
+</body>
+</html>
