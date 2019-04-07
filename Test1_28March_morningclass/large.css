@@ -1,0 +1,27 @@
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: gray;
+}
+
+.box {
+
+}
+
+.cust-img {
+	width: 100%;
+}
+
+.card {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding: 5px;
+	width: 300px;
+	background-color: white;
+}
+
+.card:hover {
+	background-color: gray;
+}
