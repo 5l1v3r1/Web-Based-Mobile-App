@@ -3,14 +3,21 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
-	background-color: grey;
+	align-items: center;
+}
+.cust-text {
+	font-weight: bold;
+	font-size: 30px;
+	float: left;
 }
 
-img {
-	width: 8vw;
+.flag {
+	padding: 50px;
+	float: right;
 }
-.weather-icon {
-	width: 10vw;
+
+.forecast {
+	margin: auto;
 }
 
 h1 {
@@ -18,7 +25,8 @@ h1 {
 }
 
 h3 {
-	font-size: 24px;
+	padding-top: 100px;
+	font-size: 36px;
 }
 
 .container {
@@ -28,7 +36,7 @@ h3 {
 }
 
 .box {
-	height: 250px;
-	width: 250px;
-	background-color: grey;
+	height: 300px;
+	width: 480px;
+	background-color: gray;
 }

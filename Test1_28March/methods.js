@@ -15,14 +15,15 @@ function getData() {
 
 function handleResponse(data) {
 	let div_baru = document.createElement('div');
-
+	div_baru.className += 'box';
 	// CITY's IDENTITY
-	let h_name = document.createElement('h1');
-	h_name.class = 'cust-text';
+	let h_name = document.createElement('div');
+	h_name.className = 'cust-text';
 	h_name.innerHTML = data.city.name;
 	append(div_baru, h_name);
 
 	let img_flag = document.createElement('img');
+	img_flag.className = 'flag';
 	if (data.city.country == 'ID') {
 		img_flag.src = 'http://flags.fmcdn.net/data/flags/h80/id.png';
 	}
@@ -49,7 +50,7 @@ function handleResponse(data) {
 	for (var i in data['list']) {
 		let img = document.createElement('img');
 		img.src = "http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png";
-		img.class = ('weather-icon');
+		img.className = 'forecast';
 		append(div_baru, img);
 
 		if (i == 5) 

@@ -3,16 +3,19 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
-	background-color: grey; 
+	align-items: center;
+}
+.cust-text {
+	font-weight: bold;
+	font-size: 26px;
+	float: left;
 }
 
-img {
-	width: 15vw;
+.flag {
+	padding: 50px;
+	float: right;
 }
 
-.weather-icon {
-	width: 10vw;
-}
 h1 {
 	font-size: 26px;
 }
@@ -28,8 +31,8 @@ h3 {
 }
 
 .box {
-	height: 250px;
-	width: 250px;
-	background-color: grey;
+	height: 300px;
+	width: 480px;
+	background-color: gray;
 	margin: 20px;
 }

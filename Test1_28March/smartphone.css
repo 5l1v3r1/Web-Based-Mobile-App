@@ -3,15 +3,18 @@
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: center;
-	background-color: grey;
+	align-items: center;
 }
 
-img {
-	width: 12vw;
+.cust-text {
+	font-weight: bold;
+	font-size: 24px;
+	float: left;
 }
 
-.weather-icon {
-	width: 10vw;
+.flag {
+	padding: 50px;
+	float: right;
 }
 
 h1 {
@@ -29,8 +32,8 @@ h3 {
 }
 
 .box {
-	height: 250px;
-	width: 250px;
-	background-color: grey;
+	height: 300px;
+	width: 460px;
+	background-color: gray;
 	margin: 20px;
 }
