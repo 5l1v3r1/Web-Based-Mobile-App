@@ -1,0 +1,25 @@
+input:focus {
+	outline: 3px solid orange;
+	background: gray;
+}
+
+.flex-container {
+	display: flex;
+	background-color: white;
+	flex-wrap: wrap; /* Other options: wrap , wrap-reverse */
+
+	/* column, turun kebawah */
+	/* flex-direction: column; */
+
+	justify-content: center;	
+	padding-top: 30px;	
+}
+
+.box {
+	height: 150px;
+	width: 300px;
+	outline: 2px solid gray;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
