@@ -1,0 +1,42 @@
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.cust-text {
+	font-weight: bold;
+	font-size: 36px;
+	float: left;
+}
+.flag {
+	padding: 50px;
+	float: right;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+.container {
+	height: 250px;
+	width: 250px;
+	background-color: grey;
+}
+
+.box {
+	height: 300px;
+	width: 480px;
+	background-color: gray;
+	margin: 20px;
+}
+
+.custom-city-text {
+	font-weight: bold;
+	font-size: 48px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web test1</title>
+	<link rel="manifest" href="./manifest.json">
+	<meta name="description" content="A sample weather app">
+	<meta name="theme-color" content="#2F3BA2" />
+	<meta charset="utf-8" name='viewport' content="width=device-width, initial-scale=1">
+	<link media="(max-width:360px)"rel="stylesheet" type="text/css" href="smartphone.css">
+	<link media="(min-width:360px)"rel="stylesheet" type="text/css" href="tabletm.css">
+	<link media="(min-width:720px)"rel="stylesheet" type="text/css" href="tabletl.css">
+	<link media="(min-width:1080px)"rel="stylesheet" type="text/css" href="desktop.css">
+</head>
+<body>	
+	<div id='cities' class='flex-container'>
+		<!-- <div class='box'>1</div>
+		<div class='box'>1</div>
+		<div class='box'>1</div>
+		<div class='box'>1</div> -->
+	</div>
+	<button id='btnAdd'>Button Add</button>
+	<script type="text/javascript" src='methods.js'></script>
+	<script type="text/javascript">
+		if ('serviceWorker' in navigator) { 
+    		window.addEventListener('load', () => { 
+       			navigator.serviceWorker.register('./service-worker.js')
+           			.then((reg) => { 
+                		console.log('Service worker registered.', reg);
+           			}); 
+           	});
+        }
+
+        let deferredPrompt;
+
+		window.addEventListener('beforeinstallprompt', (e) => {
+		  e.preventDefault();
+		  deferredPrompt = e;
+		  // Update UI notify the user they can add to home screen
+		  btnAdd.style.display = 'block';
+		});
+
+
+        btnAdd = document.getElementById('btnAdd');
+        btnAdd.addEventListener('click', (e) => {
+		  // hide our user interface that shows our A2HS button
+		  btnAdd.style.display = 'none';
+		  // Show the prompt
+		  deferredPrompt.prompt();	
+		  // Wait for the user to respond to the prompt
+		  deferredPrompt.userChoice
+		    .then((choiceResult) => {
+		      if (choiceResult.outcome === 'accepted') {
+		        console.log('User accepted the A2HS prompt');
+		      } else {
+		        console.log('User dismissed the A2HS prompt');
+		      }
+		      deferredPrompt = null;
+		    });
+		}); 
+
+	</script>
+</body>
+</html>
