@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobweb 8: Worker</title>
+</head>
+<body>
+
+<input type="text" name="nth" id='nth'>
+<input type="submit" name="submit-button" id='submit-button'>
+
+<h3 id='result'></h3>
+
+<script type="text/javascript">
+	const myWorker = new Worker('worker.js');
+	if (window.Worker) {
+		submitButton = document.getElementById('submit-button');
+		submitButton.onclick = function () {
+			myWorker.postMessage([nth.value]);
+			console.log('Message posted to worker');
+		}
+		myWorker.onmessage = function(e) {
+			result.innerHTML = e.data;
+		}
+	}
+</script>
+
+</body>
+</html>
