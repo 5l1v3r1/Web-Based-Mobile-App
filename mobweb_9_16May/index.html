@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IndexedDB</title>
+</head>
+<body>
+<h1>Test IndexedDB</h1>
+<!-- <button onclick="openDB()">init db</button> -->
+<h2>Add mhs</h2>
+Nrp : <input id='anrp'  type="text" name="nrp" >
+Name: <input id='aname' type="text" name="name">
+email:<input id='amail' type="text" name="mail">
+<button onclick="addMhs()">Add</button>
+
+<h2>Update mhs</h2>
+<h2>Delete mhs</h2>
+Nrp : <input id='dnrp'  type="text" name="nrp" >
+<button onclick="deleteMhs(dnrp.value)">Delete</button>
+
+<script type="text/javascript">
+	var db;
+	var mhsStore;
+	// 5 -> version change.
+	var DBOpenRequest = window.indexedDB.open('Mahasiswa', 5);
+
+	DBOpenRequest.onerror = function(event) {
+		alert("A");
+	}
+
+	DBOpenRequest.onsuccess = function(event) {
+		db = DBOpenRequest.result;
+		alert("B");
+	};
+
+	DBOpenRequest.onupgradeneeded = function(event){
+		var db = event.target.result;
+		keyp = {keyPath: 'nrp'};
+
+		var mhsStore = db.createObjectStore("mhs", keyp);
+		mhsStore.createIndex("name", "name", {unique : false});
+		mhsStore.createIndex("email", "email", {unique : true});
+		const mhsData = [ 
+			{ nrp: "26416001", name: "Bill", email: "bill@company.com" },
+			{ nrp: "26416002", name: "Donna", email: "donna@home.org" } 
+		]; 
+		mhsData.forEach(function(mhs){
+			mhsStore.add(mhs);
+		});
+		console.log('aaa');
+		console.log(mhsStore.get('26416001'));
+		console.log('bbb');
+	};
+	
+	function addMhs() {
+		mhsData = { nrp: anrp.value, name: aname.value, email: amail.value };
+		var transaction = db.transaction('mhs', 'readwrite');
+		var objectStore = transaction.objectStore('mhs');
+		var request = objectStore.add(mhsData);
+		transaction.oncomplete = function(event) {
+			alert('All done!');
+		}
+	}
+
+	function deleteMhs(nrp) {
+		var request = db.transaction(["mhs"], "readwrite") 
+						.objectStore("mhs") 
+						.delete(nrp);
+		alert('Deleted ' + nrp);
+	}
+
+</script>
+</body>
+</html>
